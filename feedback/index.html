@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121322429-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag("js", new Date());
+        gtag("config", "UA-121322429-1");
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>学员中期反馈表</title>
+    <link type="text/css" rel="stylesheet" href="../../statics/css/common/common.css" />
+    <script type="text/javascript" src="../../libs/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../../libs/template.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link type="text/css" rel="stylesheet" href="./index.css?v=1.2" />
+    <link rel="stylesheet" href="./utils/animation.css?v=1.2">
+    <link rel="stylesheet" href="./component/feedbackWraper1/index.css?v=1.2">
+    <link rel="stylesheet" href="./component/feedbackWraper2/index.css?v=1.2">
+    <link rel="stylesheet" href="./component/loading/index.css?v=1.2">
+    <link rel="stylesheet" href="./component/toast/index.css?v=1.2">
+    <script>
+        var fontSize = 100;
+        var elm = document.documentElement;
+        elm.style.fontSize = fontSize * (elm.clientWidth / 375) + 'px';  
+    </script>
+</head>
+
+<body>
+    <div id="feedback">
+        <div class="bgm-btn-wraper">
+            <div class="bgm-btn rotate">                
+                <audio id="bgm" loop="" src="./utils/bgm.mp3" autoplay="" preload=""></audio>
+            </div>
+        </div>
+        <toast :msg="toast.msg" v-if="toast.show"></toast>
+        <loading v-if="loading.show"></loading>
+        <div class="feedback-view">
+            <img class="feedback-logo animation animation-slideInDown" src="./images/feedback__logo.png" />
+            <feedback-wrapper-1 class="animation animation-fadeIn" title="" style="margin-bottom: 0.40rem;">
+                <p class="feedback-person-intro animation animation-flipInY" v-if="intro" v-html="intro"></p>
+            </feedback-wrapper-1>
+            <feedback-wrapper-1 class="animation animation-fadeIn" title="C://你已经学会了" style="margin-bottom: 0.40rem; ">
+                <img class="feedback-person-master animation animation-flipInY" :src="mastered_data" />
+            </feedback-wrapper-1>
+            <feedback-wrapper-1 class="animation animation-fadeIn" title="C://你即将学到" title-style="color: white;">
+                <ul v-if="learn_soon_data.length != 0" class="feedback-person-learnSoon">
+                    <li class="feedback-person-learnSoon-item animation animation-flipInY" v-for="item in learn_soon_data">{{item}}</li>
+                </ul>
+            </feedback-wrapper-1>
+
+            <img class="feedback-btn feedback-btn-item1 animation animation-shake" src="./images/feedback__btn1.png" />
+            <div class="feedback-myworks">
+                <div class="feedback-myworks-head animation animation-twisterInUpRight">
+                    <img class="feedback-myworks-head-img" src="./images/feedback__text_bg.png" />
+                    <p class="feedback-myworks-head-text">{{myworks_data.intro}}</p>
+                </div>
+                <ul class="feedback-myworks-items">
+                    <li v-if="myworks_data.imgs.length != 0" class="feedback-myworks-wraper-item animation animation-swing" v-for="item in myworks_data.imgs">
+                        <img class="feedback-myworks-wraper-item-img" :src="item" />
+                    </li>
+                </ul>
+            </div>
+            <img class="feedback-btn feedback-btn-item2 animation animation-shake" src="./images/feedback__btn2.png" />
+            <feedback-wrapper-2 v-bind:dic="learn_situation"></feedback-wrapper-2>
+            <feedback-wrapper-2 v-bind:dic="live_situation"></feedback-wrapper-2>
+            <feedback-wrapper-2 v-bind:dic="exercise_situation"></feedback-wrapper-2>
+            <feedback-wrapper-2 v-bind:dic="learn_attitude"></feedback-wrapper-2>
+            <feedback-wrapper-2 v-bind:dic="learn_ability"></feedback-wrapper-2>
+            <img class="feedback-btn feedback-btn-item3 animation animation-shake" src="./images/feedback__btn3.png" />
+            <feedback-wrapper-2 v-bind:dic="teacher_suggestion" v-bind:custom="true">
+                <p class="feedback-teacher-suggestion-text animation animation-flipInY" v-html="teacher_suggestion.text"></p>
+            </feedback-wrapper-2>
+            <img class="feedback-ship-view animation animation-fadeInRight" src="./images/feedback__ship.png" />
+            <div class="feedback-qrcode-view">
+                <img class="feedback-qrcode-img" src="./images/feedback__qrcode.png" />
+                <span class="feedback-qrcode-text">橙旭园王老师 cxy61-33</span>
+            </div>
+            <img class="feedback-footer-view animation animation-fadeInDown" src="./images/feedback__footer.png" />
+        </div>
+    </div>
+    <script type="text/javascript" src="./component/feedbackWraper1/index.js?v=1.2"></script>
+    <script type="text/javascript" src="./component/feedbackWraper2/index.js?v=1.2"></script>
+    <script type="text/javascript" src="./component/loading/index.js?v=1.2"></script>
+    <script type="text/javascript" src="./component/toast/index.js?v=1.2"></script>
+    <script type="text/javascript" src="./index.js?v=1.2"></script>
+
+</body>
+
+
+</html>

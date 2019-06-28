@@ -1,0 +1,186 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 0.14rem;
+  background-color: #3821AD;
+}
+.bgm-btn-wraper {
+  position: fixed;
+  top: 0.2rem;
+  right: 0.2rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  border: solid 1px rgba(255,255,255,0.4);
+}
+.bgm-btn.rotate {
+  animation: rotating 1.2s linear infinite;
+}
+.bgm-btn {
+  width: 70%;
+  height: 70%;
+  background-image: url(./images/feedback__music.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.feedback-view{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: none;
+}
+.feedback-logo{
+  width: 100%;
+}
+.feedback-person-intro{
+  font-size: 0.16rem;
+  padding: 0.20rem;
+  line-height: 0.30rem;
+  color: #000000;
+  background-color: #ffd537;
+}
+.feedback-person-master{
+  width: 100%;
+  display: block;
+  background-color:transparent;
+}
+.feedback-person-learnSoon{
+  background-color: #ffd537;
+  padding: 0.26rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.feedback-person-learnSoon-item{
+  min-width: 50%;
+  font-size: 0.18rem;
+  color: #000000;
+  margin-bottom: 0.18rem;
+}
+.feedback-btn{
+  width: 1.63rem;
+  margin-left: calc((100% - 1.63rem) / 2);
+  margin-top: 0.40rem;
+  margin-bottom: 0.40rem;
+}
+.feedback-myworks{
+
+}
+.feedback-myworks-head{
+  width: calc(100% - 0.28rem);
+    margin-left: 0.14rem;
+    position: relative;
+    margin-bottom: 0.38rem;
+}
+.feedback-myworks-head-img{
+  width: 100%;
+  display: block;
+}
+.feedback-myworks-head-text{
+  position: absolute;
+  width: 80%;
+  margin-left: 10%;
+  line-height: 0.30rem;
+  top: 20%;
+  font-size: 0.15rem;
+  overflow: auto;
+  height: 50%;
+}
+.feedback-myworks-items{
+  margin-left: 0.17rem;
+  margin-right: 0.03rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.feedback-myworks-wraper-item{
+  width: calc(50% - 0.18rem);
+  margin-right: 0.14rem;
+  margin-bottom: 0.14rem;
+  border: solid 0.02rem #000000;
+}
+.feedback-myworks-wraper-item-img{
+  width: 100%;
+}
+.feedback-teacher-suggestion-text{
+  background-color: #FFD537;
+  font-size: 0.15rem;
+  color: #000000;
+  line-height: 0.23rem;
+  text-decoration: underline;
+  padding: 0.3rem 0.13rem;
+}
+.feedback-ship-view{
+  width: 1.06rem;
+  margin-left: calc(100% - 1.06rem);
+
+}
+.feedback-qrcode-view{
+  margin-top: -0.75rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.feedback-qrcode-img{
+  width: 1.40rem;
+  height: 1.40rem;
+  margin-bottom: 0.25rem;
+}
+.feedback-qrcode-text{
+  font-size: 0.15rem;
+  color: #ffffff;
+}
+.feedback-footer-view{
+  margin-left: 0.70rem;
+  width: calc(100% - 0.70rem);
+  display: inherit;
+}
+
+.animation-slideInDown{
+  animation: slideInDown 2s linear;
+}
+.animation-fadeInLeft{
+  animation: fadeInLeft 3s linear;
+}
+.animation-fadeInRight{
+  animation: fadeInRight 3s linear;
+} 
+.animation-fadeInDown{
+  animation: fadeInDown 2s linear;
+} 
+.animation-fadeIn{
+  animation: fadeIn 3s linear;
+}
+
+.animation-flipInY{
+  animation: flipInY 3s linear;
+}
+.animation-flipInX{
+  animation: flipInX 3s linear;
+}
+.animation-twisterInUpRight{
+  animation: twisterInUpRight 3s linear;
+}
+.animation-twisterInUpLeft{
+  animation: twisterInUpLeft 3s linear;
+}
+.animation-shake{
+  animation: shake 2s linear;
+}
+.animation-swing{
+  animation: swing 3s linear;
+}
+.animation-zoomIn{
+  animation: zoomIn 3s linear;
+}
+.animation{
+  animation-play-state: paused;
+}
