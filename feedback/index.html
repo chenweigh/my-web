@@ -15,9 +15,10 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <title>学员中期反馈表</title>
-    <link type="text/css" rel="stylesheet" href="../../statics/css/common/common.css" />
-    <script type="text/javascript" src="../../libs/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="../../libs/template.js"></script>
+    <script src="./libs/jquery-3.4.1.min.js"></script>
+    <script src="./libs/template-web.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link type="text/css" rel="stylesheet" href="./index.css?v=1.2" />
     <link rel="stylesheet" href="./utils/animation.css?v=1.2">
@@ -35,7 +36,7 @@
 <body>
     <div id="feedback">
         <div class="bgm-btn-wraper">
-            <div class="bgm-btn rotate">                
+            <div class="bgm-btn rotate">
                 <audio id="bgm" loop="" src="./utils/bgm.mp3" autoplay="" preload=""></audio>
             </div>
         </div>
@@ -51,7 +52,8 @@
             </feedback-wrapper-1>
             <feedback-wrapper-1 class="animation animation-fadeIn" title="C://你即将学到" title-style="color: white;">
                 <ul v-if="learn_soon_data.length != 0" class="feedback-person-learnSoon">
-                    <li class="feedback-person-learnSoon-item animation animation-flipInY" v-for="item in learn_soon_data">{{item}}</li>
+                    <li class="feedback-person-learnSoon-item animation animation-flipInY"
+                        v-for="item in learn_soon_data">{{item}}</li>
                 </ul>
             </feedback-wrapper-1>
 
@@ -62,7 +64,9 @@
                     <p class="feedback-myworks-head-text">{{myworks_data.intro}}</p>
                 </div>
                 <ul class="feedback-myworks-items">
-                    <li v-if="myworks_data.imgs.length != 0" class="feedback-myworks-wraper-item animation animation-swing" v-for="item in myworks_data.imgs">
+                    <li v-if="myworks_data.imgs.length != 0"
+                        class="feedback-myworks-wraper-item animation animation-swing"
+                        v-for="item in myworks_data.imgs">
                         <img class="feedback-myworks-wraper-item-img" :src="item" />
                     </li>
                 </ul>
@@ -75,7 +79,8 @@
             <feedback-wrapper-2 v-bind:dic="learn_ability"></feedback-wrapper-2>
             <img class="feedback-btn feedback-btn-item3 animation animation-shake" src="./images/feedback__btn3.png" />
             <feedback-wrapper-2 v-bind:dic="teacher_suggestion" v-bind:custom="true">
-                <p class="feedback-teacher-suggestion-text animation animation-flipInY" v-html="teacher_suggestion.text"></p>
+                <p class="feedback-teacher-suggestion-text animation animation-flipInY"
+                    v-html="teacher_suggestion.text"></p>
             </feedback-wrapper-2>
             <img class="feedback-ship-view animation animation-fadeInRight" src="./images/feedback__ship.png" />
             <div class="feedback-qrcode-view">
