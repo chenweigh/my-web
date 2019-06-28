@@ -1,8 +1,5 @@
-var domainServer = "/server";
-// var domainServer = "//app.coding61.com/server";
-
 const JSON_DATA = {
-  ability_desc: "我们的那具驱壳，在现实当中依然匆忙地奔走着。没有天天的问候，却能够在记忆当中，感受着另外一段的炙热的情感。",
+  ability_desc: "我们的那具驱壳，在现实当中依然匆忙地奔走着。没有天天的问候，却能够在记忆当中，感受着另外一段的炙热的情感。夏至，气温逐渐升高，一出门就是足蒸暑土气，背灼炎天光。就连在屋里也难逃热暑。几月前新置的一盆文竹此时也早已停止了生长，并且还不停地黄叶、掉叶，毕竟它的适温在十几...",
   ability_photo: "./images/feedback__example01.jpeg",
   attitude_desc: "我们的那具驱壳，在现实当中依然匆忙地奔走着。没有天天的问候，却能够在记忆当中，感受着另外一段的炙热的情感。",
   attitude_photo: "./images/feedback__example01.jpeg",
@@ -12,7 +9,7 @@ const JSON_DATA = {
   exercise_situation_photo: "./images/feedback__example01.jpeg",
   learn_situation_desc: "我们的那具驱壳，在现实当中依然匆忙地奔走着。没有天天的问候，却能够在记忆当中，感受着另外一段的炙热的情感。",
   learn_situation_photo: "./images/feedback__example01.jpeg",
-  learn_soon: "怪西风,偏聚断肠人,相逢又天涯,妆罢小屏独倚,风定柳花到地",
+  learn_soon: "怪西风,偏聚断肠人,相逢又天涯,妆罢小屏独倚,风定柳花到地,梦遍千山,江寒无杜宇,化一缕春痕随流水",
   live_situation_desc: "我们的那具驱壳，在现实当中依然匆忙地奔走着。没有天天的问候，却能够在记忆当中，感受着另外一段的炙热的情感。",
   live_situation_photo: "./images/feedback__example01.jpeg",
   mastered_photo: "./images/feedback__example01.jpeg",
@@ -37,17 +34,12 @@ var Page = {
     $(".feedback-view").css({ display: "block" });
   },
   init: function() {
-    if(location.host.indexOf("chenweigh.github.io") > -1){
-      app.dealData(JSON_DATA);
-        Page.show();
-        $(window).scroll(function(e) {
-            Page.cc();
-        });
+    app.dealData(JSON_DATA);
+    Page.show();
+    $(window).scroll(function(e) {
         Page.cc();
-    }else{
-      var pk = getQueryString("pk");
-      Page.fetchMidTermFeedback(pk);
-    }
+    });
+    Page.cc();
 
     // 这段是兼容微信浏览器的
     let audio = document.getElementById("bgm");
@@ -74,30 +66,7 @@ var Page = {
         }
     })
   },
-  fetchMidTermFeedback: function(pk) {
-    $.ajax({
-      type: "get",
-      url: `${domainServer}/job_management/get_midterm_feedback/${pk}/`,
-      dataType: "json",
-      contentType: "application/json",
-      timeout: 6000,
-      success: function(json) {
-        console.log(json);
-        app.dealData(json);
-        Page.show();
-        $(window).scroll(function(e) {
-            Page.cc();
-        });
-        
-        Page.cc();
-      },
-      error: function(xhr, textStatus) {
-        app.dealFailFetchEvent(xhr, textStatus);
-      }
-    });
-  }
 };
-
 
 var app = new Vue({
   el: "#feedback",
