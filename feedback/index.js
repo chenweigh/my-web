@@ -1,6 +1,24 @@
 var domainServer = "/server";
 // var domainServer = "//app.coding61.com/server";
 
+const JSON_DATA = {
+  ability_desc: "我们的那具驱壳，在现实当中依然匆忙地奔走着。没有天天的问候，却能够在记忆当中，感受着另外一段的炙热的情感。",
+  ability_photo: "./images/feedback__example01.jpeg",
+  attitude_desc: "我们的那具驱壳，在现实当中依然匆忙地奔走着。没有天天的问候，却能够在记忆当中，感受着另外一段的炙热的情感。",
+  attitude_photo: "./images/feedback__example01.jpeg",
+  content: "我们的那具驱壳，在现实当中依然匆忙地奔走着。没有天天的问候，却能够在记忆当中，感受着另外一段的炙热的情感。",
+  evaluation: "我们的那具驱壳，在现实当中依然匆忙地奔走着。没有天天的问候，却能够在记忆当中，感受着另外一段的炙热的情感。",
+  exercise_situation_desc: "我们的那具驱壳，在现实当中依然匆忙地奔走着。没有天天的问候，却能够在记忆当中，感受着另外一段的炙热的情感。",
+  exercise_situation_photo: "./images/feedback__example01.jpeg",
+  learn_situation_desc: "我们的那具驱壳，在现实当中依然匆忙地奔走着。没有天天的问候，却能够在记忆当中，感受着另外一段的炙热的情感。",
+  learn_situation_photo: "./images/feedback__example01.jpeg",
+  learn_soon: "怪西风,偏聚断肠人,相逢又天涯,妆罢小屏独倚,风定柳花到地",
+  live_situation_desc: "我们的那具驱壳，在现实当中依然匆忙地奔走着。没有天天的问候，却能够在记忆当中，感受着另外一段的炙热的情感。",
+  live_situation_photo: "./images/feedback__example01.jpeg",
+  mastered_photo: "./images/feedback__example01.jpeg",
+  works_intro: "我们的那具驱壳，在现实当中依然匆忙地奔走着。没有天天的问候，却能够在记忆当中，感受着另外一段的炙热的情感。",
+  works_photo: "./images/feedback__example01.jpeg,./images/feedback__example02.jpeg",
+}
 const getQueryString = key => {
   var ls = location.search;
   //var reg = eval("new RegExp('[a-zA-Z0-9]+=[^&]+&|[a-zA-Z0-9]+=[^&]+$','g')");
@@ -19,8 +37,17 @@ var Page = {
     $(".feedback-view").css({ display: "block" });
   },
   init: function() {
-    var pk = getQueryString("pk");
-    Page.fetchMidTermFeedback(pk);
+    if(location.host.indexOf("chenweigh.github.io") > -1){
+      app.dealData(JSON_DATA);
+        Page.show();
+        $(window).scroll(function(e) {
+            Page.cc();
+        });
+        Page.cc();
+    }else{
+      var pk = getQueryString("pk");
+      Page.fetchMidTermFeedback(pk);
+    }
 
     // 这段是兼容微信浏览器的
     let audio = document.getElementById("bgm");
@@ -70,6 +97,7 @@ var Page = {
     });
   }
 };
+
 
 var app = new Vue({
   el: "#feedback",
