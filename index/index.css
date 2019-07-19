@@ -1,0 +1,29 @@
+html,
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  background-color: #f5f6f7;
+  color: #333;
+  min-height: 100%;
+  background-image: url("https://csdnimg.cn/release/phoenix/themes/skin-ink/images/bg.jpg");
+}
+#personal{
+
+}
+.personal__frame{
+    background-color: orange;
+}
+.personal__avatar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.personal__avatar img{
+    margin-top: 80px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    -webkit-filter: blur(1px);
+}
