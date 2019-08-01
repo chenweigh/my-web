@@ -3,7 +3,7 @@ html,body{
     height: 100%;
     margin: 0;
     padding: 0;
-    min-width: 960px;
+    /* min-width: 960px; */
     overflow: auto;
 }
 .airport{
@@ -127,4 +127,42 @@ html,body{
     width: 100%;
     text-align: center;
     line-height: 40px;
+}
+.airport__footer{
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    margin-left: 20%;
+    justify-content: flex-start;
+}
+.airport__footer__leftWrapper{
+    width: 80px;
+    height: 40px;
+    margin-right: 10px;
+    background-color: red;
+}
+.airport__footer__rightWrapper{
+    
+    
+} 
+.airport__footer__rightWrapper p{
+    margin: 0px;
+    font-size: 10px;
+    color: #333333;
+}
+@media screen and (max-width: 800px){
+    .airport__loginContainer{
+        width: 100%;
+        margin-left: 0;
+    }
+    .airport__footer{
+        margin-left: 0px;
+        justify-content: center;
+    }
+}
+@media screen and (min-width: 800px){
+    .airport__loginContainer{
+        width: 600px;
+        margin-left:calc(100% - 600px);
+    }
 }
